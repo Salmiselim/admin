@@ -1,0 +1,35 @@
+.sidebar {
+  height: 100%;
+  width: 15rem;
+  position: fixed;
+  top: -0.5rem;
+  left: 0;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  padding-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  hr {
+    width: 80%;
+    color: lightgray;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+  }
+  .logo {
+    width: 80%;
+    margin-left: 1.5rem;
+    margin-bottom: -0.7rem;
+  }
+  .sidebar a {
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    display: block;
+  }
+
+  .sidebar a:hover {
+    background-color: rgb(65, 127, 153);
+    color: white;
+  }

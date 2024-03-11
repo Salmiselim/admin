@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input required formControlName="name" id="name" type="text" class="input">
+
+    <label for="address">Address:</label>
+    <input required formControlName="address" id="address" type="text" class="input">
+
+    <label for="bank">Bank:</label>
+    <select formControlName="bank" id="bank">
+      <option *ngFor="let bank of banks" [ngValue]="bank">{{ bank.full_name }}</option>
+    </select>
+
+    <button type="submit" class="submit">ADD</button>
+  </form>
