@@ -19,4 +19,10 @@ export class AgenceService {
   addAgence(agenceData: any): Observable<any> {
     return this.http.post<any>('http://localhost:8080/agence', agenceData);
   }
+  updateAgency(code: number, agenceData: any): Observable<any> {
+    return this.http.put<any>(`http://localhost:8080/agence/${code}`, agenceData);
+  }
+  getAgencyById(id: number): Observable<Agence> {
+    return this.http.get<Agence>(`http://localhost:8080/agence/${id}`);
+  }
 }

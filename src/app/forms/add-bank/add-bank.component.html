@@ -1,1 +1,17 @@
-<p>add-bank works!</p>
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>Ajout d'une banque</h1>
+    <label for="name">Code Bank:</label>
+    <input required formControlName="code_Bank" id="name" type="number" class="input" required>
+
+    <label for="full_name">Bank name:</label>
+    <input required formControlName="full_name" id="address" type="text" class="input" required>
+
+    <label for="name">Abbreviation:</label>
+    <input required formControlName="name" id="address" type="text" class="input" required>
+
+
+
+    <button type="submit" class="submit">ADD</button>
+  </form>

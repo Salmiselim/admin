@@ -1,10 +1,11 @@
+import { Agence } from './../../agence';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { SidebarComponent } from '../../sidebar/sidebar.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { AgenceService } from '../../agence.service';
-import { Agence } from '../../agence';
 import { CommonModule } from '@angular/common';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-agence',
@@ -32,5 +33,9 @@ export class AgenceComponent implements OnInit {
     this.agenceService.deleteAgence(code).subscribe(() => {
       this.agencies = this.agencies.filter(agency => agency.codeAgence !== code);
     });
+  }
+
+  edit(codeagence: number) {
+    this.router.navigate(['/editagc', codeagence]);
   }
 }

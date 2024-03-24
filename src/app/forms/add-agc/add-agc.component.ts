@@ -6,6 +6,7 @@ import { Bank } from '../../bank';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../../sidebar/sidebar.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-agc',
   standalone: true,
@@ -20,7 +21,7 @@ export class AddAgcComponent implements OnInit {
   banks: Bank[] = [];
   form!: FormGroup;
 
-  constructor(private bankService: BankService, private formBuilder: FormBuilder, private agenceService: AgenceService) {}
+  constructor(private bankService: BankService,private router: Router, private formBuilder: FormBuilder, private agenceService: AgenceService) {}
 
   ngOnInit(): void {
     this.bankService.getBanks().subscribe(banks => {
@@ -30,7 +31,7 @@ export class AddAgcComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [''],
       address: [''],
-      bank: [''] // Update to hold the entire bank object
+      bank: ['']
     });
   }
 
@@ -39,6 +40,7 @@ export class AddAgcComponent implements OnInit {
     this.agenceService.addAgence(formData).subscribe(
       response => {
         console.log('Agency added successfully:', response);
+        this.router.navigate(['/agclist']);
       },
       error => {
         console.error('Error adding agency:', error);
